@@ -16,6 +16,10 @@ public class Main {
         BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem1_BubbleSort::bubbleSortNonOptimised);
         BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem1_BubbleSort::bubbleSortOptimised);
 
+        System.out.println("\n=======================================================================");
+        System.out.println("| Sorting wines in ascending order based on  unique alchohol contents |");
+        System.out.println("=======================================================================");
+
         // Shuffled - shows average case
         BenchmarkHandler.benchmark("Non-optimised Bubble Sort", testRounds, true, wines, Problem1_BubbleSort::bubbleSortNonOptimised);
         BenchmarkHandler.benchmark("Optimised Bubble Sort", testRounds, true, wines, Problem1_BubbleSort::bubbleSortOptimised);
