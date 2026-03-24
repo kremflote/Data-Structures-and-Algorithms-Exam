@@ -1,10 +1,12 @@
+package main.java;
+
 import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
-        String whitePath = "resources/winequality-white.csv";
-        String redPath = "resources/winequality-red.csv";
+        String whitePath = "src/main/resources/winequality-white.csv";
+        String redPath = "src/main/resources/winequality-red.csv";
         ArrayList<Wine> wines = DataHandler.loadAllWines(redPath, whitePath);
         System.out.println("Total wines loaded: " + wines.size());
 

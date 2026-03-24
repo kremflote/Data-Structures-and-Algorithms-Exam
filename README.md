@@ -15,7 +15,7 @@
 
 ## Oversikt
 
-Dette repositoriet inneholder gruppeeksamen for PG4200-H: Data Structures and Algorithms. Eksamen implementerer og analyserer fire klassiske sorteringsalgoritmer anvendt på **Wine Quality Dataset** fra [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/wine+quality).
+Dette repositoriet inneholder gruppeeksamen for PG4200-H: Data Structures and Algorithms. Eksamen implementerer og analyserer fire klassiske sorteringsalgoritmer anvendt på **main.java.Wine Quality Dataset** fra [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/wine+quality).
 
 Alle algoritmer opererer på de **unike alkoholverdiene** hentet fra de kombinerte rød- og hvitvin `.csv`-filene.
 
@@ -39,7 +39,7 @@ Implementerer **Quick Sort** med fire pivot-strategier: første element, siste e
 
 ## Dataset
 
-- **Kilde:** [UCI Wine Quality Dataset](https://archive.ics.uci.edu/ml/datasets/wine+quality)
+- **Kilde:** [UCI main.java.Wine Quality Dataset](https://archive.ics.uci.edu/ml/datasets/wine+quality)
 - **Filer brukt:** `winequality-red.csv`, `winequality-white.csv`
 - **Attributt brukt:** `alcohol`-kolonnen — unike verdier hentet fra det kombinerte datasettet
 

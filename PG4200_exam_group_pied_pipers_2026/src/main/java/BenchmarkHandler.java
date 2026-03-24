@@ -1,3 +1,5 @@
+package main.java;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.function.Consumer;
@@ -30,7 +32,7 @@ public class BenchmarkHandler {
         }
         String shuffleLabel = shuffle ? "shuffled" : "sorted";
         System.out.println("\n--- | " + name + " - " + shuffleLabel + " (" + testRounds + " runs) | ---");
-        System.out.println("Total:   " + timer.totalMicros() + " µs");
-        System.out.println("Average: " + timer.averageMicros() + " µs");
+        System.out.println("Total:   " + timer.totalMillis() + " ms");
+        System.out.println("Average: " + timer.averageMillis() + " ms");
     }
 }

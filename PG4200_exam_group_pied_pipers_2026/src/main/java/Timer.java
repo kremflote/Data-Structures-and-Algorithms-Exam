@@ -1,3 +1,5 @@
+package main.java;
+
 public class Timer {
     private long startTime;
     private long endTime;
@@ -10,19 +12,19 @@ public class Timer {
 
     public void stop() {
         endTime = System.nanoTime();
-        totalTime += durationMicros();
+        totalTime += durationMillis();
         laps++;
     }
 
-    public long durationMicros() {
-        return (endTime - startTime) / 1000;
+    public long durationMillis() {
+        return (endTime - startTime) / 1_000_000;
     }
 
-    public long totalMicros() {
+    public long totalMillis() {
         return totalTime;
     }
 
-    public long averageMicros() {
+    public long averageMillis() {
         return laps == 0 ? 0 : totalTime / laps;
     }
 
