@@ -20,16 +20,23 @@ public class Main {
         System.out.println("| Sorting wines in ascending order based on  unique alchohol contents |");
         System.out.println("=======================================================================");
 
+        // Problem 1 - Bubble Sort
         // Shuffled - shows average case
-        BenchmarkHandler.benchmark("Non-optimised Bubble Sort", testRounds, true, wines, Problem1_BubbleSort::bubbleSortNonOptimised);
-        BenchmarkHandler.benchmark("Optimised Bubble Sort", testRounds, true, wines, Problem1_BubbleSort::bubbleSortOptimised);
+        System.out.println("\n--- Problem 1: Bubble Sort Sort ---");
+        BenchmarkHandler.benchmark("Non-optimised", testRounds, true, wines, Problem1_BubbleSort::bubbleSortNonOptimised);
+        BenchmarkHandler.benchmark("Optimised", testRounds, true, wines, Problem1_BubbleSort::bubbleSortOptimised);
 
         // Pre-sort the list once for the sorted benchmarks
         ArrayList<Wine> sortedWines = new ArrayList<>(wines);
         Problem1_BubbleSort.bubbleSortOptimised(sortedWines);
 
         // Sorted - shows best case advantage of optimised
-        BenchmarkHandler.benchmark("Non-optimised Bubble Sort", testRounds, false, sortedWines, Problem1_BubbleSort::bubbleSortNonOptimised);
-        BenchmarkHandler.benchmark("Optimised Bubble Sort", testRounds, false, sortedWines, Problem1_BubbleSort::bubbleSortOptimised);
+        BenchmarkHandler.benchmark("Non-optimised", testRounds, false, sortedWines, Problem1_BubbleSort::bubbleSortNonOptimised);
+        BenchmarkHandler.benchmark("Optimised", testRounds, false, sortedWines, Problem1_BubbleSort::bubbleSortOptimised);
+
+        // Problem 2 - Insertion Sort
+        System.out.println("\n--- Problem 2: Insertion Sort ---");
+        BenchmarkHandler.benchmark("Insertion Sort", testRounds, true, wines, Problem2_InsertionSort::insertionSort);
+        BenchmarkHandler.benchmark("Insertion Sort", testRounds, false, sortedWines, Problem2_InsertionSort::insertionSort);
     }
 }
