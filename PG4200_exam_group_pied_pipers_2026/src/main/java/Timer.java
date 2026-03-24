@@ -21,7 +21,15 @@ public class Timer {
     }
 
     public double averageMillis() {
-        return laps == 0 ? 0 : (totalTime / laps) / 1_000_000.0;
+        return laps == 0 ? 0 : ((double) totalTime / laps) / 1_000_000.0;
+    }
+
+    public double totalMicros() {
+        return totalTime / 1_000.0;
+    }
+
+    public double averageMicros() {
+        return laps == 0 ? 0 : ((double) totalTime / laps) / 1_000.0;
     }
 
     public void reset() {
