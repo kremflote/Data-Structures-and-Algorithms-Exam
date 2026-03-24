@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Problem1_BubbleSort {
 
-    // Non-optimised: keeps checking even if no swaps occurred.
+    // Non-optimised bubblesort
     public static void bubbleSortNonOptimised(ArrayList<Wine> list) {
         int n = list.size();
         for (int i = 0; i < n - 1; i++) {

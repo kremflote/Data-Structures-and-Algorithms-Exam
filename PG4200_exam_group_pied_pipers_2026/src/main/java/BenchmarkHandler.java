@@ -33,15 +33,18 @@ public class BenchmarkHandler {
         String shuffleLabel = shuffle ? "shuffled" : "sorted";
         System.out.println("\n--- | " + name + " - " + shuffleLabel + " (" + testRounds + " runs) | ---");
         if (timer.totalMillis() < 1.0) {
-            System.out.printf("Total:   %.4f µs%n", timer.totalMicros());
+            System.out.printf("Total:   %.0f µs%n", timer.totalMicros());
         } else {
-            System.out.printf("Total:   %.4f ms%n", timer.totalMillis());
+            System.out.printf("Total:   %.0f ms%n", timer.totalMillis());
         }
 
-        if (timer.averageMillis() < 1.0) {
-            System.out.printf("Average: %.4f µs%n", timer.averageMicros());
+
+        if (timer.averageMillis() < 0.001) {
+            System.out.printf("Average: %.2f µs%n", timer.averageMicros());
+        } else if (timer.averageMillis() < 1.0) {
+            System.out.printf("Average: %.0f µs%n", timer.averageMicros());
         } else {
-            System.out.printf("Average: %.4f ms%n", timer.averageMillis());
+            System.out.printf("Average: %.2f ms%n", timer.averageMillis());
         }
     }
 }
