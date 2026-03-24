@@ -12,20 +12,16 @@ public class Timer {
 
     public void stop() {
         endTime = System.nanoTime();
-        totalTime += durationMillis();
+        totalTime += (endTime - startTime); // store raw nanoseconds
         laps++;
     }
 
-    public long durationMillis() {
-        return (endTime - startTime) / 1_000_000;
+    public double totalMillis() {
+        return totalTime / 1_000_000.0; // convert only for display
     }
 
-    public long totalMillis() {
-        return totalTime;
-    }
-
-    public long averageMillis() {
-        return laps == 0 ? 0 : totalTime / laps;
+    public double averageMillis() {
+        return laps == 0 ? 0 : (totalTime / laps) / 1_000_000.0;
     }
 
     public void reset() {
