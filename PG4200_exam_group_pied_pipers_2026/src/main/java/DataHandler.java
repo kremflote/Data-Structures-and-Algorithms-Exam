@@ -21,6 +21,9 @@ public class DataHandler {
                 String[] parts = line.split(";");
                 if (parts.length < 12) continue;
 
+                double alcohol = Double.parseDouble(parts[10]);
+                if (wines.stream().anyMatch(w -> w.alcohol() == alcohol)) continue;
+
                 wines.add(new Wine(
                         Double.parseDouble(parts[0]),
                         Double.parseDouble(parts[1]),
@@ -32,7 +35,7 @@ public class DataHandler {
                         Double.parseDouble(parts[7]),
                         Double.parseDouble(parts[8]),
                         Double.parseDouble(parts[9]),
-                        Double.parseDouble(parts[10]),
+                        alcohol,
                         Integer.parseInt(parts[11].trim()),
                         type
                 ));
