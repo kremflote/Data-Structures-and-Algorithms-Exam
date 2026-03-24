@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Problem1_BubbleSort {
 
-    // Non-optimised bubblesort
     public static void bubbleSortNonOptimised(ArrayList<Wine> list) {
         int n = list.size();
         for (int i = 0; i < n - 1; i++) {
@@ -18,7 +17,7 @@ public class Problem1_BubbleSort {
         }
     }
 
-    // Optimised: exits early if no swaps happen in a pass, and reduces range for each pass
+    // Optimised: exits early if no swaps happen in the outer pass, and reduces range for each inner pass
     public static void bubbleSortOptimised(ArrayList<Wine> list) {
         int n = list.size();
         for (int i = 0; i < n - 1; i++) {
