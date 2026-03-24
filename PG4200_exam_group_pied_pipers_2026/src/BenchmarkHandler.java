@@ -4,6 +4,9 @@ import java.util.function.Consumer;
 
 public class BenchmarkHandler {
 
+    // The JVM's JIT compiler will optimize the code after running a couple of times.
+    // This affects the time measurements.
+    // This method eliminates this issue by triggering optimization before doing the benchmarks.
     public static void jvmWarmup(int warmupRounds, ArrayList<Wine> wines,
                                  Consumer<ArrayList<Wine>> algorithm) {
         System.out.println("--- | Warming up JVM | ---");
