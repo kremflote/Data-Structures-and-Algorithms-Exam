@@ -11,7 +11,7 @@ public class Problem1_BubbleSort {
         for (int i = 0; i < n - 1; i++) {
 
             // Compares that element to the adjacent element, swap places if it's bigger than the adjacent one
-            // Repeat for-loop until it reaches end of list, even though no swaps occured
+            // Repeat for-loop until it reaches end of list, even though no swaps occurred
             for (int j = 0; j < n - 1; j++) {
                 if (list.get(j).alcohol() > list.get(j + 1).alcohol()) {
                     Wine temp = list.get(j);
