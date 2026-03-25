@@ -6,14 +6,16 @@ public class Problem2_InsertionSort {
 
     public static void insertionSort(ArrayList<Wine> list) {
 
-        // Start on the second index as the first is already sorted
+        // Start on the second index as the first is assumed to be sorted
         for (int i = 1; i < list.size(); i++) {
 
             // Store a copy of the current wine
             Wine current_wine = list.get(i);
             double keyAlcohol = current_wine.alcohol();
 
-            // Move all elements with higher alcohol content than the current wine to the right
+            // Compare the current wine with each element to its left.
+            // Shift elements with higher alcohol content one position to the right
+            // until the correct insertion slot is found.
             int j = i - 1;
             while (j >= 0 && list.get(j).alcohol() > keyAlcohol) {
                 list.set(j + 1, list.get(j));
