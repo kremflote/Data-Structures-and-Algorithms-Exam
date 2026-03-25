@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Problem3_MergeSort {
+    public static void mergeSort(ArrayList<Wine> list) {
+        mergeSort(list, 0, list.size() - 1);
+    }
     public static int mergeSort(ArrayList<Wine> list, int left, int right) {
         if (left >= right) return 0; // If there is only 1 element, already sorted. Return.
         int mid = left + (right - left) / 2; // Find the middle
