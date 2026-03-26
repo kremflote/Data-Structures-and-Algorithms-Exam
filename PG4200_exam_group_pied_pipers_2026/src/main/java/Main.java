@@ -35,12 +35,15 @@ public class Main {
         BenchmarkHandler.benchmark("Optimised", testRounds, false, sortedWines, Problem1_BubbleSort::bubbleSortOptimised);
 
         // Problem 2 - Insertion Sort
+        BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem2_InsertionSort::insertionSort);
+
         System.out.println("\n--- Problem 2: Insertion Sort ---");
         BenchmarkHandler.benchmark("Insertion Sort", testRounds, true, wines, Problem2_InsertionSort::insertionSort);
         BenchmarkHandler.benchmark("Insertion Sort", testRounds, false, sortedWines, Problem2_InsertionSort::insertionSort);
 
         // Problem 3 - Merge Sort
         System.out.println("\n--- Problem 3: Merge Sort ---");
+        BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem3_MergeSort::mergeSort);
         BenchmarkHandler.benchmark("Merge Sort", testRounds, true, wines, Problem3_MergeSort::mergeSort);
         BenchmarkHandler.benchmark("Merge Sort", testRounds, false, sortedWines, Problem3_MergeSort::mergeSort);
     }
