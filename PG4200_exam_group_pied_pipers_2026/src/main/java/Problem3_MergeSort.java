@@ -22,7 +22,7 @@ public class Problem3_MergeSort {
         merge(list, left, mid, right);          // Merge all sorted halves
     }
 
-    // Merges two already sorted halves into a single sorted section
+    // Merges two sorted halves into a single sorted list
     private static void merge(ArrayList<Wine> list, int left, int mid, int right) {
         List<Wine> temp = new ArrayList<>();    // Temporary list for the sorted result before writing back
 
