@@ -16,33 +16,32 @@ public class Problem3_MergeSort {
 
         int mid = left + (right - left) / 2;                // Find the middle
 
-        int count = mergeSort(list, left, mid)             // Sort everything left of mid until it hits single elements
-                    + mergeSort(list, mid + 1, right); // sort everything right of mid the same way
+        int count = mergeSort(list, left, mid)              // Sort everything left of mid until it hits single elements
+                + mergeSort(list, mid + 1, right);      // Sort everything right of mid the same way
 
-        count += merge(list, left, mid, right);
-        return count;// Merge all sorted halves
+        count += merge(list, left, mid, right);             // Merge sorted halves, count the operation
+        return count;
     }
 
     // Merges two sorted halves into a single sorted list
     private static int merge(ArrayList<Wine> list, int left, int mid, int right) {
-        List<Wine> temp = new ArrayList<>();        // Temporary list for the sorted result before writing back
+        List<Wine> temp = new ArrayList<>();                // Temporary list for the sorted result before writing back
 
-        int i = left, j = mid + 1, count = 0;;
+        int i = left, j = mid + 1;
 
-        while (i <= mid && j <= right) {            // Compares current element of each half, adds the smaller one to temp
-            count++;
+        while (i <= mid && j <= right) {                    // Compares current element of each half, adds the smaller one to temp
             if (list.get(i).alcohol() <= list.get(j).alcohol()) {
-                temp.add(list.get(i++));            // Take the smallest value from left half
+                temp.add(list.get(i++));                    // Take the smallest value from left half
             } else {
-                temp.add(list.get(j++));            // Take the smallest value from the right half
+                temp.add(list.get(j++));                    // Take the smallest value from the right half
             }
         }
-        while (i <= mid) temp.add(list.get(i++));   // Checks for leftover elements in left half, append to temp
-        while (j <= right) temp.add(list.get(j++)); // Checks for leftover elements in right half, append to temp
+        while (i <= mid) temp.add(list.get(i++));           // Checks for leftover elements in left half, append to temp
+        while (j <= right) temp.add(list.get(j++));         // Checks for leftover elements in right half, append to temp
 
-        for (int k = 0; k < temp.size(); k++) {     // Write the sorted temp list back into the original list
+        for (int k = 0; k < temp.size(); k++) {             // Write the sorted temp list back into the original list
             list.set(left + k, temp.get(k));
         }
-        return count;
+        return 1;                                           // Count this merge operation
     }
 }
