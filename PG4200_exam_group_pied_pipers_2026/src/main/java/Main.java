@@ -35,23 +35,23 @@ public class Main {
         // Shuffled - shows average case
         System.out.println("\n======== Problem 1: Bubble Sort ========");
         BenchmarkHandler.benchmark("Non-optimised", testRounds, true, wines, Problem1_BubbleSort::bubbleSortNonOptimised);
-        BenchmarkHandler.benchmark("Optimised", testRounds, true, wines, Problem1_BubbleSort::bubbleSortOptimised);
+        BenchmarkHandler.benchmark("Optimised",     testRounds, true, wines, Problem1_BubbleSort::bubbleSortOptimised);
 
         // Sorted - shows best case advantage of optimised
         BenchmarkHandler.benchmark("Non-optimised", testRounds, false, sortedWines, Problem1_BubbleSort::bubbleSortNonOptimised);
-        BenchmarkHandler.benchmark("Optimised", testRounds, false, sortedWines, Problem1_BubbleSort::bubbleSortOptimised);
+        BenchmarkHandler.benchmark("Optimised",     testRounds, false, sortedWines, Problem1_BubbleSort::bubbleSortOptimised);
         System.out.println("\n=======================================");
 
 
         // Problem 2 - Insertion Sort
         System.out.println("\n========Problem 2: Insertion Sort ========");
-        BenchmarkHandler.benchmark("Insertion Sort", testRounds, true, wines, Problem2_InsertionSort::insertionSort);
+        BenchmarkHandler.benchmark("Insertion Sort", testRounds, true,  wines,       Problem2_InsertionSort::insertionSort);
         BenchmarkHandler.benchmark("Insertion Sort", testRounds, false, sortedWines, Problem2_InsertionSort::insertionSort);
         System.out.println("\n=======================================");
 
         // Problem 3 - Merge Sort
         System.out.println("\n======== Problem 3: Merge Sort ========");
-        BenchmarkHandler.benchmark("Merge Sort", testRounds, true, wines, Problem3_MergeSort::mergeSort);
+        BenchmarkHandler.benchmark("Merge Sort", testRounds, true,  wines,       Problem3_MergeSort::mergeSort);
         BenchmarkHandler.benchmark("Merge Sort", testRounds, false, sortedWines, Problem3_MergeSort::mergeSort);
         System.out.println("\n=======================================");
 
