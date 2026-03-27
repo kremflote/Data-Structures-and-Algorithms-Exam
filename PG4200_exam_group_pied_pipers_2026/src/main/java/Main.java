@@ -33,26 +33,30 @@ public class Main {
 
         // Problem 1 - Bubble Sort
         // Shuffled - shows average case
-        System.out.println("\n--- Problem 1: Bubble Sort Sort ---");
+        System.out.println("\n======== Problem 1: Bubble Sort ========");
         BenchmarkHandler.benchmark("Non-optimised", testRounds, true, wines, Problem1_BubbleSort::bubbleSortNonOptimised);
         BenchmarkHandler.benchmark("Optimised", testRounds, true, wines, Problem1_BubbleSort::bubbleSortOptimised);
 
         // Sorted - shows best case advantage of optimised
         BenchmarkHandler.benchmark("Non-optimised", testRounds, false, sortedWines, Problem1_BubbleSort::bubbleSortNonOptimised);
         BenchmarkHandler.benchmark("Optimised", testRounds, false, sortedWines, Problem1_BubbleSort::bubbleSortOptimised);
+        System.out.println("\n=======================================");
+
 
         // Problem 2 - Insertion Sort
-        System.out.println("\n--- Problem 2: Insertion Sort ---");
+        System.out.println("\n========Problem 2: Insertion Sort ========");
         BenchmarkHandler.benchmark("Insertion Sort", testRounds, true, wines, Problem2_InsertionSort::insertionSort);
         BenchmarkHandler.benchmark("Insertion Sort", testRounds, false, sortedWines, Problem2_InsertionSort::insertionSort);
+        System.out.println("\n=======================================");
 
         // Problem 3 - Merge Sort
-        System.out.println("\n--- Problem 3: Merge Sort ---");
+        System.out.println("\n======== Problem 3: Merge Sort ========");
         BenchmarkHandler.benchmark("Merge Sort", testRounds, true, wines, Problem3_MergeSort::mergeSort);
         BenchmarkHandler.benchmark("Merge Sort", testRounds, false, sortedWines, Problem3_MergeSort::mergeSort);
+        System.out.println("\n=======================================");
 
         // Problem 4 - Quick Sort
-        System.out.println("\n--- Problem 4: Quick Sort ---");
+        System.out.println("\n======== Problem 4: Quick Sort ========");
         BenchmarkHandler.benchmark("Quick Sort - First pivot",  testRounds, true,  wines,       Problem4_QuickSort::quickSortFirst);
         BenchmarkHandler.benchmark("Quick Sort - First pivot",  testRounds, false, sortedWines, Problem4_QuickSort::quickSortFirst);
 
@@ -64,5 +68,6 @@ public class Main {
 
         BenchmarkHandler.benchmark("Quick Sort - Median pivot", testRounds, true,  wines,       Problem4_QuickSort::quickSortMedian);
         BenchmarkHandler.benchmark("Quick Sort - Median pivot", testRounds, false, sortedWines, Problem4_QuickSort::quickSortMedian);
+        System.out.println("\n=======================================");
     }
 }
