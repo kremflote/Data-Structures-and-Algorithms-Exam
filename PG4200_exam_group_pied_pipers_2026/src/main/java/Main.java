@@ -17,6 +17,7 @@ public class Main {
         ArrayList<Wine> sortedWines = new ArrayList<>(wines);
         Problem1_BubbleSort.bubbleSortOptimised(sortedWines);
 
+        // jvm warmup of every algorithm
         BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem1_BubbleSort::bubbleSortNonOptimised);
         BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem1_BubbleSort::bubbleSortOptimised);
         BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem2_InsertionSort::insertionSort);
