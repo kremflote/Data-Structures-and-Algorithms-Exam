@@ -21,7 +21,8 @@ public class BenchmarkHandler {
     }
 
     public static void benchmark(String name, int testRounds, boolean shuffle,
-                                 ArrayList<Wine> wines, Function<ArrayList<Wine>, Integer> algorithm) {
+                                 ArrayList<Wine> wines, Function<ArrayList<Wine>, Integer> algorithm,
+                                 String operationLabel) {
         Timer timer = new Timer();
         int totalCount = 0;
         for (int i = 0; i < testRounds; i++) {
@@ -38,7 +39,6 @@ public class BenchmarkHandler {
         } else {
             System.out.printf("Total:   %.0f ms%n", timer.totalMillis());
         }
-
         if (timer.averageMillis() < 0.001) {
             System.out.printf("Average: %.2f µs%n", timer.averageMicros());
         } else if (timer.averageMillis() < 1.0) {
@@ -46,6 +46,6 @@ public class BenchmarkHandler {
         } else {
             System.out.printf("Average: %.2f ms%n", timer.averageMillis());
         }
-        System.out.println("Avg operations: " + totalCount / testRounds);
+        System.out.println("Avg " + operationLabel + ": " + totalCount / testRounds);
     }
 }

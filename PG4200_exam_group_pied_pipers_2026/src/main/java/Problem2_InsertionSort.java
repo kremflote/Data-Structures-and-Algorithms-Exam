@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Problem2_InsertionSort {
 
     public static int insertionSort(ArrayList<Wine> list) {
-        int count = 0;
+        int comparisons = 0;
 
         // Start on the second index as the first is assumed to be sorted
         for (int i = 1; i < list.size(); i++) {
@@ -21,12 +21,12 @@ public class Problem2_InsertionSort {
             while (j >= 0 && list.get(j).alcohol() > keyAlcohol) {
                 list.set(j + 1, list.get(j));
                 j--;
-                count++;
+                comparisons++;
             }
-            count++; // Also count the last comparison that fails the loop
+            comparisons++; // Also count the last comparison that fails the loop
             // set the current wine-element in the correct place in the sorted list
             list.set(j + 1, current_wine);
         }
-        return count;
+        return comparisons;
     }
 }

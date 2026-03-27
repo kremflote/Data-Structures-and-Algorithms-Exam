@@ -16,11 +16,11 @@ public class Problem3_MergeSort {
 
         int mid = left + (right - left) / 2;                // Find the middle
 
-        int count = mergeSort(list, left, mid)              // Sort everything left of mid until it hits single elements
+        int mergeCounts = mergeSort(list, left, mid)              // Sort everything left of mid until it hits single elements
                 + mergeSort(list, mid + 1, right);      // Sort everything right of mid the same way
 
-        count += merge(list, left, mid, right);             // Merge sorted halves, count the operation
-        return count;
+        mergeCounts += merge(list, left, mid, right);             // Merge sorted halves, count the operation
+        return mergeCounts;
     }
 
     // Merges two sorted halves into a single sorted list

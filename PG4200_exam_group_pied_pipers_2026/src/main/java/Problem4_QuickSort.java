@@ -69,11 +69,11 @@ public class Problem4_QuickSort {
         // Everything below is the same regardless of pivot strategy
         // since we always move the pivot to the end before this point
         double pivot = list.get(high).alcohol();
-        int i = low - 1, count = 0;
+        int i = low - 1, comparisons = 0;
 
         // Walk through the section, moving elements smaller than pivot to the left
         for (int j = low; j < high; j++) {
-            count++; // Count every comparison
+            comparisons++; // Count every comparison
             if (list.get(j).alcohol() < pivot) {
                 i++;
                 Collections.swap(list, i, j);
@@ -82,6 +82,6 @@ public class Problem4_QuickSort {
 
         // Place pivot in its final sorted position
         Collections.swap(list, i + 1, high);
-        return new int[]{i + 1, count}; // Return pivot index and comparison count
+        return new int[]{i + 1, comparisons}; // Return pivot index and comparison count
     }
 }
