@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Problem1_BubbleSort {
 
-    public static void bubbleSortNonOptimised(ArrayList<Wine> list) {
+    public static int bubbleSortNonOptimised(ArrayList<Wine> list) {
         int n = list.size();
-
+        int count = 0;
         // Grabs an element in the list
         for (int i = 0; i < n - 1; i++) {
 
@@ -17,15 +17,17 @@ public class Problem1_BubbleSort {
                     Wine temp = list.get(j);
                     list.set(j, list.get(j + 1));
                     list.set(j + 1, temp);
+                    count++;
                 }
             }
         }
+        return count;
     }
 
     // Optimised: exits early if no swaps happen in the outer pass, and reduces range for each inner pass
-    public static void bubbleSortOptimised(ArrayList<Wine> list) {
+    public static int bubbleSortOptimised(ArrayList<Wine> list) {
         int n = list.size();
-
+        int count = 0;
         // Grabs an element in the list
         for (int i = 0; i < n - 1; i++) {
 
@@ -38,6 +40,7 @@ public class Problem1_BubbleSort {
                     Wine temp = list.get(j);
                     list.set(j, list.get(j + 1));
                     list.set(j + 1, temp);
+                    count++;
 
                     // Tell algorithm that the element was swapped, make the loop run again
                     swapped = true;
@@ -47,5 +50,6 @@ public class Problem1_BubbleSort {
             // If list is ordered, the inner loop will never run
             if (!swapped) break;
         }
+        return count;
     }
 }
