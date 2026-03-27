@@ -33,28 +33,29 @@ public class Problem4_QuickSort {
     private static int partition(ArrayList<Wine> list, int low, int high, String pivotType) {
 
         // Move the chosen pivot to the end before partitioning
-        if (pivotType.equals("first")) {
-            // First element as pivot - bad on sorted data, always worst case split
-            Collections.swap(list, low, high);
+        switch (pivotType) {
+            case "first" ->
+                // First element as pivot - bad on sorted data, always worst case split
+                    Collections.swap(list, low, high);
+            case "random" -> {
+                // Random element as pivot - best general choice, unpredictable worst case
+                int randomIndex = low + new Random().nextInt(high - low + 1);
+                Collections.swap(list, randomIndex, high);
+            }
+            case "median" -> {
+                // Median of first, middle and last element as pivot
+                // Good balance between predictability and performance
+                int mid = low + (high - low) / 2;
+                double first = list.get(low).alcohol();
+                double middle = list.get(mid).alcohol();
+                double last = list.get(high).alcohol();
 
-        } else if (pivotType.equals("random")) {
-            // Random element as pivot - best general choice, unpredictable worst case
-            int randomIndex = low + new Random().nextInt(high - low + 1);
-            Collections.swap(list, randomIndex, high);
-
-        } else if (pivotType.equals("median")) {
-            // Median of first, middle and last element as pivot
-            // Good balance between predictability and performance
-            int mid = low + (high - low) / 2;
-            double first = list.get(low).alcohol();
-            double middle = list.get(mid).alcohol();
-            double last = list.get(high).alcohol();
-
-            // Find which of the three values is the median and swap it to the end
-            if ((first <= middle && middle <= last) || (last <= middle && middle <= first)) {
-                Collections.swap(list, mid, high);
-            } else if ((middle <= first && first <= last) || (last <= first && first <= middle)) {
-                Collections.swap(list, low, high);
+                // Find which of the three values is the median and swap it to the end
+                if ((first <= middle && middle <= last) || (last <= middle && middle <= first)) {
+                    Collections.swap(list, mid, high);
+                } else if ((middle <= first && first <= last) || (last <= first && first <= middle)) {
+                    Collections.swap(list, low, high);
+                }
             }
             // If last is already median, no swap needed - it's already at high
 
