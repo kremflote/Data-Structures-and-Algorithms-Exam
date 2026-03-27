@@ -44,7 +44,27 @@ public class Main {
         // Problem 3 - Merge Sort
         System.out.println("\n--- Problem 3: Merge Sort ---");
         BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem3_MergeSort::mergeSort);
+
         BenchmarkHandler.benchmark("Merge Sort", testRounds, true, wines, Problem3_MergeSort::mergeSort);
         BenchmarkHandler.benchmark("Merge Sort", testRounds, false, sortedWines, Problem3_MergeSort::mergeSort);
+
+        // Problem 4 - Quick Sort
+        System.out.println("\n--- Problem 4: Quick Sort ---");
+        BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem4_QuickSort::quickSortFirst);
+        BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem4_QuickSort::quickSortLast);
+        BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem4_QuickSort::quickSortRandom);
+        BenchmarkHandler.jvmWarmup(warmupRounds, wines, Problem4_QuickSort::quickSortMedian);
+
+        BenchmarkHandler.benchmark("Quick Sort - First pivot",  testRounds, true,  wines,       Problem4_QuickSort::quickSortFirst);
+        BenchmarkHandler.benchmark("Quick Sort - First pivot",  testRounds, false, sortedWines, Problem4_QuickSort::quickSortFirst);
+
+        BenchmarkHandler.benchmark("Quick Sort - Last pivot",   testRounds, true,  wines,       Problem4_QuickSort::quickSortLast);
+        BenchmarkHandler.benchmark("Quick Sort - Last pivot",   testRounds, false, sortedWines, Problem4_QuickSort::quickSortLast);
+
+        BenchmarkHandler.benchmark("Quick Sort - Random pivot", testRounds, true,  wines,       Problem4_QuickSort::quickSortRandom);
+        BenchmarkHandler.benchmark("Quick Sort - Random pivot", testRounds, false, sortedWines, Problem4_QuickSort::quickSortRandom);
+
+        BenchmarkHandler.benchmark("Quick Sort - Median pivot", testRounds, true,  wines,       Problem4_QuickSort::quickSortMedian);
+        BenchmarkHandler.benchmark("Quick Sort - Median pivot", testRounds, false, sortedWines, Problem4_QuickSort::quickSortMedian);
     }
 }
