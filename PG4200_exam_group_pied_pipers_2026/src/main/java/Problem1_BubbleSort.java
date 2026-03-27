@@ -13,11 +13,11 @@ public class Problem1_BubbleSort {
             // Compares that element to the adjacent element, swap places if it's bigger than the adjacent one
             // Repeat for-loop until it reaches end of list, even though no swaps occurred
             for (int j = 0; j < n - 1; j++) {
+                count++;
                 if (list.get(j).alcohol() > list.get(j + 1).alcohol()) {
                     Wine temp = list.get(j);
                     list.set(j, list.get(j + 1));
                     list.set(j + 1, temp);
-                    count++;
                 }
             }
         }
@@ -36,11 +36,11 @@ public class Problem1_BubbleSort {
 
             // Compares that element to the adjacent element, swap places if it's bigger than the adjacent one
             for (int j = 0; j < n - i - 1; j++) {
+                count++;
                 if (list.get(j).alcohol() > list.get(j + 1).alcohol()) {
                     Wine temp = list.get(j);
                     list.set(j, list.get(j + 1));
                     list.set(j + 1, temp);
-                    count++;
 
                     // Tell algorithm that the element was swapped, make the loop run again
                     swapped = true;

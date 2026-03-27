@@ -23,7 +23,7 @@ public class Problem2_InsertionSort {
                 j--;
                 count++;
             }
-
+            count++; // Also count the last comparison that fails the loop
             // set the current wine-element in the correct place in the sorted list
             list.set(j + 1, current_wine);
         }
