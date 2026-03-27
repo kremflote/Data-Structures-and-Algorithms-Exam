@@ -57,8 +57,9 @@ public class Problem4_QuickSort {
                     Collections.swap(list, low, high);
                 }
             }
-            // If last is already median, no swap needed - it's already at high
-
+            case "last" -> {
+                // Do nothing – last element is already the pivot
+            }
         }
         // Default (pivotType "last"): last element is pivot, already in position
 
