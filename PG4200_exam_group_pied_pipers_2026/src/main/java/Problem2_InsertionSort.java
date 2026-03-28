@@ -10,7 +10,7 @@ public class Problem2_InsertionSort {
         int comparisons = 0;
         // Start on the second index as the first is assumed to be sorted
         for (int i = 1; i < list.size(); i++) {
-            // Store a copy of the current wine
+            comparisons++; // count the comparison in the for-loop
             Wine current_wine = list.get(i);
             double keyAlcohol = current_wine.alcohol();
             // Compare the current wine with each element to its left.
@@ -22,7 +22,6 @@ public class Problem2_InsertionSort {
                 j--;
                 comparisons++;
             }
-            comparisons++; // Also count the last comparison that fails the loop
             // set the current wine-element in the correct place in the sorted list
             list.set(j + 1, current_wine);
         }
