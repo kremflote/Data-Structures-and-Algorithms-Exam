@@ -1,19 +1,18 @@
 package main.java;
 
+import main.java.records.Wine;
+
 import java.util.ArrayList;
 
 public class Problem2_InsertionSort {
 
     public static int insertionSort(ArrayList<Wine> list) {
         int comparisons = 0;
-
         // Start on the second index as the first is assumed to be sorted
         for (int i = 1; i < list.size(); i++) {
-
             // Store a copy of the current wine
             Wine current_wine = list.get(i);
             double keyAlcohol = current_wine.alcohol();
-
             // Compare the current wine with each element to its left.
             // Shift elements with higher alcohol content one position to the right
             // until the correct insertion slot is found.

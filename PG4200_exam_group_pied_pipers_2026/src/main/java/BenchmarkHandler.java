@@ -1,51 +1,38 @@
 package main.java;
 
+import main.java.records.BenchmarkResult;
+import main.java.enums.InputType;
+import main.java.enums.OperationLabel;
+import main.java.records.Wine;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.function.Function;
 
 public class BenchmarkHandler {
 
-    // The JVM's JIT compiler will optimize the code after running a couple of times.
-    // This affects the time measurements.
-    // This method eliminates this issue by triggering optimization before doing the benchmarks.
-    public static void jvmWarmup(int warmupRounds, ArrayList<Wine> wines,
+    // The JVM's JIT compiler will optimize the code after running a couple of times. This affects the time measurements.
+    // jvmWarmup eliminates the issue by triggering optimizations before the benchmarks.
+    public static void jvmWarmup(int warmupRounds, ArrayList<Wine> raw,
+                                 ArrayList<Wine> shuffled, ArrayList<Wine> sorted,
                                  Function<ArrayList<Wine>, Integer> algorithm) {
-        System.out.println("--- | Warming up JVM | ---");
         for (int i = 0; i < warmupRounds; i++) {
-            ArrayList<Wine> warmup = new ArrayList<>(wines);
-            Collections.shuffle(warmup);
-            algorithm.apply(warmup);
+            algorithm.apply(new ArrayList<>(raw));
+            algorithm.apply(new ArrayList<>(shuffled));
+            algorithm.apply(new ArrayList<>(sorted));
         }
-        System.out.println("Warmup done.");
     }
 
-    public static void benchmark(String name, int testRounds, boolean shuffle,
-                                 ArrayList<Wine> wines, Function<ArrayList<Wine>, Integer> algorithm,
-                                 String operationLabel) {
+    public static BenchmarkResult benchmark(String name, int testRounds, InputType inputType,
+                                            ArrayList<Wine> wines, Function<ArrayList<Wine>, Integer> algorithm,
+                                            OperationLabel operationLabel) {
         Timer timer = new Timer();
         int totalCount = 0;
         for (int i = 0; i < testRounds; i++) {
             ArrayList<Wine> list = new ArrayList<>(wines);
-            if (shuffle) Collections.shuffle(list);
             timer.start();
             totalCount += algorithm.apply(list);
             timer.stop();
         }
-        String shuffleLabel = shuffle ? "shuffled" : "sorted";
-        System.out.println("\n--- | " + name + " - " + shuffleLabel + " (" + testRounds + " runs) | ---");
-        if (timer.totalMillis() < 1.0) {
-            System.out.printf("Total:   %.0f µs%n", timer.totalMicros());
-        } else {
-            System.out.printf("Total:   %.0f ms%n", timer.totalMillis());
-        }
-        if (timer.averageMillis() < 0.001) {
-            System.out.printf("Average: %.2f µs%n", timer.averageMicros());
-        } else if (timer.averageMillis() < 1.0) {
-            System.out.printf("Average: %.0f µs%n", timer.averageMicros());
-        } else {
-            System.out.printf("Average: %.2f ms%n", timer.averageMillis());
-        }
-        System.out.println("Avg " + operationLabel + ": " + totalCount / testRounds);
+        return new BenchmarkResult(name, inputType, timer.averageMicros(), totalCount / testRounds, operationLabel);
     }
 }

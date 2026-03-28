@@ -1,13 +1,15 @@
 package main.java;
 
+import main.java.records.Wine;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DataHandler {
+public class DataParser {
 
-    private DataHandler() {}
+    private DataParser() {}
 
     private static ArrayList<Wine> loadWines(String filePath, Wine.WineType type) {
         ArrayList<Wine> wines = new ArrayList<>();

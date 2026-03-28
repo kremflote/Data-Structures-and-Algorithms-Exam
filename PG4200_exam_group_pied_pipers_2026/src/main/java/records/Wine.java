@@ -1,4 +1,4 @@
-package main.java;
+package main.java.records;
 
 public record Wine(
         double fixedAcidity,

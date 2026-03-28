@@ -1,5 +1,7 @@
 package main.java;
 
+import main.java.records.Wine;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -35,7 +37,6 @@ public class Problem4_QuickSort {
 
     // Returns int[] where [0] = pivot's final index, [1] = comparison count
     private static int[] partition(ArrayList<Wine> list, int low, int high, String pivotType) {
-
         // Move the chosen pivot to the end before partitioning
         switch (pivotType) {
             case "first" ->
@@ -53,7 +54,6 @@ public class Problem4_QuickSort {
                 double first = list.get(low).alcohol();
                 double middle = list.get(mid).alcohol();
                 double last = list.get(high).alcohol();
-
                 // Find which of the three values is the median and swap it to the end
                 if ((first <= middle && middle <= last) || (last <= middle && middle <= first)) {
                     Collections.swap(list, mid, high);
