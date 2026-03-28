@@ -11,21 +11,15 @@ public class DataParser {
 
     private DataParser() {}
 
-    private static ArrayList<Wine> loadWines(String filePath, Wine.WineType type) {
+    private static ArrayList<Wine> loadWinesUnfiltered(String filePath, Wine.WineType type) {
         ArrayList<Wine> wines = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             boolean firstLine = true;
-
             while ((line = br.readLine()) != null) {
                 if (firstLine) { firstLine = false; continue; }
-
                 String[] parts = line.split(";");
                 if (parts.length < 12) continue;
-
-                double alcohol = Double.parseDouble(parts[10]);
-                if (wines.stream().anyMatch(w -> w.alcohol() == alcohol)) continue;
-
                 wines.add(new Wine(
                         Double.parseDouble(parts[0]),
                         Double.parseDouble(parts[1]),
@@ -37,7 +31,7 @@ public class DataParser {
                         Double.parseDouble(parts[7]),
                         Double.parseDouble(parts[8]),
                         Double.parseDouble(parts[9]),
-                        alcohol,
+                        Double.parseDouble(parts[10]),
                         Integer.parseInt(parts[11].trim()),
                         type
                 ));
@@ -50,8 +44,19 @@ public class DataParser {
 
     public static ArrayList<Wine> loadAllWines(String redPath, String whitePath) {
         ArrayList<Wine> all = new ArrayList<>();
-        all.addAll(loadWines(redPath, Wine.WineType.RED));
-        all.addAll(loadWines(whitePath, Wine.WineType.WHITE));
+        all.addAll(loadWinesUnfiltered(redPath, Wine.WineType.RED));
+        all.addAll(loadWinesUnfiltered(whitePath, Wine.WineType.WHITE));
         return all;
+    }
+
+    public static ArrayList<Wine> loadUniqueWines(String redPath, String whitePath) {
+        ArrayList<Wine> all = loadAllWines(redPath, whitePath);
+        ArrayList<Wine> unique = new ArrayList<>();
+        for (Wine w : all) {
+            if (unique.stream().noneMatch(u -> u.alcohol() == w.alcohol())) {
+                unique.add(w);
+            }
+        }
+        return unique;
     }
 }
