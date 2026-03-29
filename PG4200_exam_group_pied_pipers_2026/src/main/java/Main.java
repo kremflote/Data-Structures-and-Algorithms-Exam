@@ -69,19 +69,24 @@ public class Main {
         BenchmarkHandler.jvmWarmup(warmupRounds, rawWines, shuffledWines, sortedWines, Problem4_QuickSort::quickSortLast);
         BenchmarkHandler.jvmWarmup(warmupRounds, rawWines, shuffledWines, sortedWines, Problem4_QuickSort::quickSortRandom);
         BenchmarkHandler.jvmWarmup(warmupRounds, rawWines, shuffledWines, sortedWines, Problem4_QuickSort::quickSortMedian);
+        BenchmarkHandler.jvmWarmup(warmupRounds, rawWines, shuffledWines, allWines,    Problem4_QuickSort::quickSortMedian);
         System.out.println("--- | Executing Quick Sort benchmarks...");
         results.add(BenchmarkHandler.benchmark("Quick Sort - First pivot",  testRounds, InputType.RAW,      rawWines,      Problem4_QuickSort::quickSortFirst,  OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - First pivot",  testRounds, InputType.SHUFFLED, shuffledWines, Problem4_QuickSort::quickSortFirst,  OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - First pivot",  testRounds, InputType.SORTED,   sortedWines,   Problem4_QuickSort::quickSortFirst,  OperationLabel.COMPARISONS));
+        results.add(BenchmarkHandler.benchmark("Quick Sort - First pivot",  testRounds, InputType.ALL,      allWines,      Problem4_QuickSort::quickSortFirst,  OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - Last pivot",   testRounds, InputType.RAW,      rawWines,      Problem4_QuickSort::quickSortLast,   OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - Last pivot",   testRounds, InputType.SHUFFLED, shuffledWines, Problem4_QuickSort::quickSortLast,   OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - Last pivot",   testRounds, InputType.SORTED,   sortedWines,   Problem4_QuickSort::quickSortLast,   OperationLabel.COMPARISONS));
+        results.add(BenchmarkHandler.benchmark("Quick Sort - Last pivot",   testRounds, InputType.ALL,      allWines,      Problem4_QuickSort::quickSortLast,   OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - Random pivot", testRounds, InputType.RAW,      rawWines,      Problem4_QuickSort::quickSortRandom, OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - Random pivot", testRounds, InputType.SHUFFLED, shuffledWines, Problem4_QuickSort::quickSortRandom, OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - Random pivot", testRounds, InputType.SORTED,   sortedWines,   Problem4_QuickSort::quickSortRandom, OperationLabel.COMPARISONS));
+        results.add(BenchmarkHandler.benchmark("Quick Sort - Random pivot", testRounds, InputType.ALL,      allWines,      Problem4_QuickSort::quickSortRandom, OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - Median pivot", testRounds, InputType.RAW,      rawWines,      Problem4_QuickSort::quickSortMedian, OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - Median pivot", testRounds, InputType.SHUFFLED, shuffledWines, Problem4_QuickSort::quickSortMedian, OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - Median pivot", testRounds, InputType.SORTED,   sortedWines,   Problem4_QuickSort::quickSortMedian, OperationLabel.COMPARISONS));
+        results.add(BenchmarkHandler.benchmark("Quick Sort - Median pivot", testRounds, InputType.ALL,      allWines,      Problem4_QuickSort::quickSortMedian, OperationLabel.COMPARISONS));
         System.out.println("--- | Insertion Quick benchmarking complete.");
 
         PrintHandler.printResults(results, exportToFile);

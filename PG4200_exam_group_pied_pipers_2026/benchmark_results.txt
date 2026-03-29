@@ -4,38 +4,42 @@
 ============================================================================================
 Algorithm                      Input      Avg Time        Avg Operations           
 --------------------------------------------------------------------------------------------
-| Bubble Sort Non-optimized    raw        122 µs          2607 swaps                       |
-| Bubble Sort Non-optimized    shuffled   38 µs           2677 swaps                       |
-| Bubble Sort Non-optimized    sorted     27 µs           0 swaps                          |
+| Bubble Sort Non-optimized    raw        144 µs          2607 swaps                       |
+| Bubble Sort Non-optimized    shuffled   39 µs           2747 swaps                       |
+| Bubble Sort Non-optimized    sorted     31 µs           0 swaps                          |
 
-| Bubble Sort Optimized        raw        111 µs          2607 swaps                       |
-| Bubble Sort Optimized        shuffled   84 µs           2677 swaps                       |
-| Bubble Sort Optimized        sorted     0,53 µs         0 swaps                          |
+| Bubble Sort Optimized        raw        123 µs          2607 swaps                       |
+| Bubble Sort Optimized        shuffled   25 µs           2747 swaps                       |
+| Bubble Sort Optimized        sorted     0,36 µs         0 swaps                          |
 
-| Insertion Sort               raw        59 µs           2717 comparisons                 |
-| Insertion Sort               shuffled   57 µs           2787 comparisons                 |
+| Insertion Sort               raw        73 µs           2717 comparisons                 |
+| Insertion Sort               shuffled   58 µs           2857 comparisons                 |
 | Insertion Sort               sorted     3 µs            110 comparisons                  |
-| Insertion Sort               all        19,85 ms        9242963 comparisons              |
+| Insertion Sort               all        20,35 ms        9242963 comparisons              |
 
-| Merge Sort                   raw        22 µs           110 merge operations             |
-| Merge Sort                   shuffled   21 µs           110 merge operations             |
-| Merge Sort                   sorted     19 µs           110 merge operations             |
-| Merge Sort                   all        2,12 ms         6496 merge operations            |
+| Merge Sort                   raw        26 µs           110 merge operations             |
+| Merge Sort                   shuffled   28 µs           110 merge operations             |
+| Merge Sort                   sorted     24 µs           110 merge operations             |
+| Merge Sort                   all        2,13 ms         6496 merge operations            |
 
-| Quick Sort - First pivot     raw        10 µs           740 comparisons                  |
-| Quick Sort - First pivot     shuffled   10 µs           728 comparisons                  |
-| Quick Sort - First pivot     sorted     36 µs           6105 comparisons                 |
+| Quick Sort - First pivot     raw        3 µs            740 comparisons                  |
+| Quick Sort - First pivot     shuffled   3 µs            735 comparisons                  |
+| Quick Sort - First pivot     sorted     13 µs           6105 comparisons                 |
+| Quick Sort - First pivot     all        1,28 ms         607317 comparisons               |
 
-| Quick Sort - Last pivot      raw        10 µs           685 comparisons                  |
-| Quick Sort - Last pivot      shuffled   9 µs            641 comparisons                  |
-| Quick Sort - Last pivot      sorted     117 µs          6105 comparisons                 |
+| Quick Sort - Last pivot      raw        3 µs            685 comparisons                  |
+| Quick Sort - Last pivot      shuffled   3 µs            714 comparisons                  |
+| Quick Sort - Last pivot      sorted     22 µs           6105 comparisons                 |
+| Quick Sort - Last pivot      all        1,28 ms         609957 comparisons               |
 
-| Quick Sort - Random pivot    raw        13 µs           737 comparisons                  |
-| Quick Sort - Random pivot    shuffled   13 µs           731 comparisons                  |
-| Quick Sort - Random pivot    sorted     11 µs           736 comparisons                  |
+| Quick Sort - Random pivot    raw        8 µs            744 comparisons                  |
+| Quick Sort - Random pivot    shuffled   8 µs            736 comparisons                  |
+| Quick Sort - Random pivot    sorted     6 µs            742 comparisons                  |
+| Quick Sort - Random pivot    all        1,56 ms         606812 comparisons               |
 
-| Quick Sort - Median pivot    raw        13 µs           665 comparisons                  |
-| Quick Sort - Median pivot    shuffled   12 µs           581 comparisons                  |
-| Quick Sort - Median pivot    sorted     11 µs           546 comparisons                  |
+| Quick Sort - Median pivot    raw        3 µs            665 comparisons                  |
+| Quick Sort - Median pivot    shuffled   3 µs            656 comparisons                  |
+| Quick Sort - Median pivot    sorted     2 µs            546 comparisons                  |
+| Quick Sort - Median pivot    all        1,27 ms         607954 comparisons               |
 ============================================================================================
 
