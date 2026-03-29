@@ -7,9 +7,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class DataParser {
+public class WineLoader {
 
-    private DataParser() {}
+    private WineLoader() {}
 
     private static ArrayList<Wine> loadWinesUnfiltered(String filePath, Wine.WineType type) {
         ArrayList<Wine> wines = new ArrayList<>();

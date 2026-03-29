@@ -17,12 +17,12 @@ public class Main {
         int testRounds = 100;
 
         // Preparing data for benchmarking
-        ArrayList<Wine> uniqueWines = DataParser.loadUniqueWines(redPath, whitePath);
+        ArrayList<Wine> uniqueWines = WineLoader.loadUniqueWines(redPath, whitePath);
         System.out.println("Total unique wines loaded: " + uniqueWines.size());
         ArrayList<Wine> rawWines = new ArrayList<>(uniqueWines);                    // unprocessed data from source
         ArrayList<Wine> shuffledWines = new ArrayList<>(uniqueWines);               // shuffled data for problems 1b and 2b
         ArrayList<Wine> sortedWines = new ArrayList<>(uniqueWines);                 // sorted data for omega benchmarking
-        ArrayList<Wine> allWines    = DataParser.loadAllWines(redPath, whitePath);  // a larger dataset to benchmark input size impact
+        ArrayList<Wine> allWines    = WineLoader.loadAllWines(redPath, whitePath);  // a larger dataset to benchmark input size impact
         System.out.println("Total wines with duplicates loaded: " + allWines.size());
 
         Collections.shuffle(shuffledWines);
