@@ -27,7 +27,7 @@ public class Main {
         System.out.println("Total wines with duplicates loaded: " + allWines.size());
 
         Collections.shuffle(shuffledWines);
-        Problem1_BubbleSort.bubbleSortOptimised(sortedWines);   // utilizing the appropriate algorithm given the data size and input order to sort the data
+        Problem4_QuickSort.quickSortMedian(sortedWines);   // utilizing the appropriate algorithm given the data size and input order to sort the data
         ArrayList<BenchmarkResult> results = new ArrayList<>();
 
         // Problem 1 - Bubble Sort
