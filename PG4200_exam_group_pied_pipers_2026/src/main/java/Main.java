@@ -15,6 +15,7 @@ public class Main {
 
         int warmupRounds = 10;
         int testRounds = 100;
+        boolean exportToFile = true;
 
         // Preparing data for benchmarking
         ArrayList<Wine> uniqueWines = WineLoader.loadUniqueWines(redPath, whitePath);
@@ -30,31 +31,37 @@ public class Main {
         ArrayList<BenchmarkResult> results = new ArrayList<>();
 
         // Problem 1 - Bubble Sort
-        System.out.println("--- | Warming up Bubble Sort | ---");
+        System.out.println("--- | Warming up Bubble Sort");
         BenchmarkHandler.jvmWarmup(warmupRounds, rawWines, shuffledWines, sortedWines, Problem1_BubbleSort::bubbleSortNonOptimised);
         BenchmarkHandler.jvmWarmup(warmupRounds, rawWines, shuffledWines, sortedWines, Problem1_BubbleSort::bubbleSortOptimised);
-        results.add(BenchmarkHandler.benchmark("Bubble Sort Non-optimised", testRounds, InputType.RAW,      rawWines,      Problem1_BubbleSort::bubbleSortNonOptimised, OperationLabel.SWAPS));
-        results.add(BenchmarkHandler.benchmark("Bubble Sort Non-optimised", testRounds, InputType.SHUFFLED, shuffledWines, Problem1_BubbleSort::bubbleSortNonOptimised, OperationLabel.SWAPS));
-        results.add(BenchmarkHandler.benchmark("Bubble Sort Non-optimised", testRounds, InputType.SORTED,   sortedWines,   Problem1_BubbleSort::bubbleSortNonOptimised, OperationLabel.SWAPS));
-        results.add(BenchmarkHandler.benchmark("Bubble Sort Optimised",     testRounds, InputType.RAW,      rawWines,      Problem1_BubbleSort::bubbleSortOptimised,    OperationLabel.SWAPS));
-        results.add(BenchmarkHandler.benchmark("Bubble Sort Optimised",     testRounds, InputType.SHUFFLED, shuffledWines, Problem1_BubbleSort::bubbleSortOptimised,    OperationLabel.SWAPS));
-        results.add(BenchmarkHandler.benchmark("Bubble Sort Optimised",     testRounds, InputType.SORTED,   sortedWines,   Problem1_BubbleSort::bubbleSortOptimised,    OperationLabel.SWAPS));
+        System.out.println("--- | Executing Bubble Sort benchmarks...");
+        results.add(BenchmarkHandler.benchmark("Bubble Sort Non-optimized", testRounds, InputType.RAW,      rawWines,      Problem1_BubbleSort::bubbleSortNonOptimised, OperationLabel.SWAPS));
+        results.add(BenchmarkHandler.benchmark("Bubble Sort Non-optimized", testRounds, InputType.SHUFFLED, shuffledWines, Problem1_BubbleSort::bubbleSortNonOptimised, OperationLabel.SWAPS));
+        results.add(BenchmarkHandler.benchmark("Bubble Sort Non-optimized", testRounds, InputType.SORTED,   sortedWines,   Problem1_BubbleSort::bubbleSortNonOptimised, OperationLabel.SWAPS));
+        results.add(BenchmarkHandler.benchmark("Bubble Sort Optimized",     testRounds, InputType.RAW,      rawWines,      Problem1_BubbleSort::bubbleSortOptimised,    OperationLabel.SWAPS));
+        results.add(BenchmarkHandler.benchmark("Bubble Sort Optimized",     testRounds, InputType.SHUFFLED, shuffledWines, Problem1_BubbleSort::bubbleSortOptimised,    OperationLabel.SWAPS));
+        results.add(BenchmarkHandler.benchmark("Bubble Sort Optimized",     testRounds, InputType.SORTED,   sortedWines,   Problem1_BubbleSort::bubbleSortOptimised,    OperationLabel.SWAPS));
+        System.out.println("--- | Bubble Sort benchmarking complete.");
 
         // Problem 2 - Insertion Sort
-        System.out.println("--- | Warming up Insertion Sort | ---");
+        System.out.println("--- | Warming up Insertion Sort");
         BenchmarkHandler.jvmWarmup(warmupRounds, rawWines, shuffledWines, sortedWines, Problem2_InsertionSort::insertionSort);
+        System.out.println("--- | Executing Insertion Sort benchmarks...");
         results.add(BenchmarkHandler.benchmark("Insertion Sort", testRounds, InputType.RAW,      rawWines,      Problem2_InsertionSort::insertionSort, OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Insertion Sort", testRounds, InputType.SHUFFLED, shuffledWines, Problem2_InsertionSort::insertionSort, OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Insertion Sort", testRounds, InputType.SORTED,   sortedWines,   Problem2_InsertionSort::insertionSort, OperationLabel.COMPARISONS));
-        results.add(BenchmarkHandler.benchmark("Insertion Sort", testRounds, InputType.ALL,   allWines,   Problem2_InsertionSort::insertionSort, OperationLabel.COMPARISONS));
+        results.add(BenchmarkHandler.benchmark("Insertion Sort", testRounds, InputType.ALL,       allWines,      Problem2_InsertionSort::insertionSort, OperationLabel.COMPARISONS));
+        System.out.println("--- | Insertion Sort benchmarking complete.");
 
         // Problem 3 - Merge Sort
-        System.out.println("--- | Warming up Merge Sort | ---");
+        System.out.println("--- | Warming up Merge Sort");
         BenchmarkHandler.jvmWarmup(warmupRounds, rawWines, shuffledWines, sortedWines, Problem3_MergeSort::mergeSort);
+        System.out.println("--- | Executing Merge Sort benchmarks...");
         results.add(BenchmarkHandler.benchmark("Merge Sort", testRounds, InputType.RAW,      rawWines,      Problem3_MergeSort::mergeSort, OperationLabel.MERGE_OPERATIONS));
         results.add(BenchmarkHandler.benchmark("Merge Sort", testRounds, InputType.SHUFFLED, shuffledWines, Problem3_MergeSort::mergeSort, OperationLabel.MERGE_OPERATIONS));
         results.add(BenchmarkHandler.benchmark("Merge Sort", testRounds, InputType.SORTED,   sortedWines,   Problem3_MergeSort::mergeSort, OperationLabel.MERGE_OPERATIONS));
-        results.add(BenchmarkHandler.benchmark("Merge Sort", testRounds, InputType.ALL,   allWines,   Problem3_MergeSort::mergeSort, OperationLabel.MERGE_OPERATIONS));
+        results.add(BenchmarkHandler.benchmark("Merge Sort", testRounds, InputType.ALL,       allWines,      Problem3_MergeSort::mergeSort, OperationLabel.MERGE_OPERATIONS));
+        System.out.println("--- | Insertion Merge benchmarking complete.");
 
         // Problem 4 - Quick Sort
         System.out.println("--- | Warming up Quick Sort | ---");
@@ -62,6 +69,7 @@ public class Main {
         BenchmarkHandler.jvmWarmup(warmupRounds, rawWines, shuffledWines, sortedWines, Problem4_QuickSort::quickSortLast);
         BenchmarkHandler.jvmWarmup(warmupRounds, rawWines, shuffledWines, sortedWines, Problem4_QuickSort::quickSortRandom);
         BenchmarkHandler.jvmWarmup(warmupRounds, rawWines, shuffledWines, sortedWines, Problem4_QuickSort::quickSortMedian);
+        System.out.println("--- | Executing Quick Sort benchmarks...");
         results.add(BenchmarkHandler.benchmark("Quick Sort - First pivot",  testRounds, InputType.RAW,      rawWines,      Problem4_QuickSort::quickSortFirst,  OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - First pivot",  testRounds, InputType.SHUFFLED, shuffledWines, Problem4_QuickSort::quickSortFirst,  OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - First pivot",  testRounds, InputType.SORTED,   sortedWines,   Problem4_QuickSort::quickSortFirst,  OperationLabel.COMPARISONS));
@@ -74,33 +82,8 @@ public class Main {
         results.add(BenchmarkHandler.benchmark("Quick Sort - Median pivot", testRounds, InputType.RAW,      rawWines,      Problem4_QuickSort::quickSortMedian, OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - Median pivot", testRounds, InputType.SHUFFLED, shuffledWines, Problem4_QuickSort::quickSortMedian, OperationLabel.COMPARISONS));
         results.add(BenchmarkHandler.benchmark("Quick Sort - Median pivot", testRounds, InputType.SORTED,   sortedWines,   Problem4_QuickSort::quickSortMedian, OperationLabel.COMPARISONS));
+        System.out.println("--- | Insertion Quick benchmarking complete.");
 
-        printResults(results);
-    }
-
-    // ----- Helper methods to print results -----
-    private static void printResults(ArrayList<BenchmarkResult> results) {
-        System.out.println("\n=======================================================================");
-        System.out.println("| Sorting wines in ascending order based on unique alcohol contents   |");
-        System.out.println("=======================================================================");
-        System.out.printf("%-30s %-10s %-15s %-25s%n", "Algorithm", "Input", "Avg Time", "Avg Operations");
-        System.out.println("-".repeat(80));
-
-        String lastName = "";
-        for (BenchmarkResult r : results) {
-            if (!r.name().equals(lastName)) {
-                if (!lastName.isEmpty()) System.out.println();
-                lastName = r.name();
-            }
-            System.out.printf("%-30s %-10s %-15s %d %s%n",
-                    r.name(), r.inputType(), formatTime(r.avgMicros()),
-                    r.avgOperations(), r.operationLabel().getLabel());
-        }
-    }
-
-    private static String formatTime(double micros) {
-        if (micros >= 1000) return String.format("%.2f ms", micros / 1000);
-        if (micros >= 1)    return String.format("%.0f µs", micros);
-        return String.format("%.2f µs", micros);
+        PrintHandler.printResults(results, exportToFile);
     }
 }
