@@ -40,16 +40,12 @@ public class Problem4_QuickSort {
         // Move the chosen pivot to the end before partitioning
         switch (pivotType) {
             case "first" ->
-                // First element as pivot - bad on sorted data, always worst case split
                     Collections.swap(list, low, high);
             case "random" -> {
-                // Random element as pivot - best general choice, unpredictable worst case
                 int randomIndex = low + new Random().nextInt(high - low + 1);
                 Collections.swap(list, randomIndex, high);
             }
             case "median" -> {
-                // Median of first, middle and last element as pivot
-                // Good balance between predictability and performance
                 int mid = low + (high - low) / 2;
                 double first = list.get(low).alcohol();
                 double middle = list.get(mid).alcohol();
@@ -66,8 +62,6 @@ public class Problem4_QuickSort {
             }
         }
 
-        // Everything below is the same regardless of pivot strategy
-        // since we always move the pivot to the end before this point
         double pivot = list.get(high).alcohol();
         int i = low - 1, comparisons = 0;
 
