@@ -1,8 +1,6 @@
-# PG4200-H – Data Structures and Algorithms
-### Avsluttende eksamen | Kristiania University College, Oslo, Norge
-**Emne:** PG4200-H | **Semester:** H-2025 | **Foreleser:** [Prof. Dr. Rashmi Gupta](https://www.linkedin.com/in/guptar3)
-
----
+# Eksamen Algorithms and Data Structures
+### Benchmarking and Complexity Analysis of Fundamental Sorting Algorithms | Kristiania University College, Oslo, Norge
+**Emne:** PG4200-H Algorithms and Data Structures  | **Semester:** H-2025 | **Foreleser:** [Prof. Dr. Rashmi Gupta](https://www.linkedin.com/in/guptar3)
 
 ## Gruppemedlemmer
 
@@ -11,11 +9,20 @@
 | Marius Kristensen | [@kremflote](https://github.com/kremflote) |
 | Marius André Ellingsen | [@mariusaellingsen](https://github.com/mariusaellingsen) |
 
+
+
+
+---
+
+## Karakter
+
+Ingen karakter mottatt enda.
+
 ---
 
 ## Oversikt
 
-Dette repositoriet inneholder gruppeeksamen for PG4200-H: Data Structures and Algorithms. Eksamen implementerer og analyserer fire klassiske sorteringsalgoritmer anvendt på **main.java.Wine Quality Dataset** fra [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/wine+quality).
+Dette repositoriet inneholder gruppeeksamen for PG4200-H: Algorithms and Data Structures. Eksamen implementerer og analyserer fire klassiske sorteringsalgoritmer anvendt på **main.java.Wine Quality Dataset** fra [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/wine+quality).
 
 Alle algoritmer opererer på de **unike alkoholverdiene** hentet fra de kombinerte rød- og hvitvin `.csv`-filene.
 
