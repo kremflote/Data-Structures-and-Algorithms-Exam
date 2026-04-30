@@ -1,9 +1,15 @@
 # Eksamen Algorithms and Data Structures
+
 ![Java](https://img.shields.io/badge/Java-orange?logo=java)
 ![Sorting Algorithms](https://img.shields.io/badge/Sorting%20Algorithms-blue)
-### Benchmarking and Complexity Analysis of Fundamental Sorting Algorithms | Kristiania 
-**Emne:** PG4200-H Algorithms and Data Structures  | **Semester:** H-2025 | **Foreleser:** [Prof. Dr. Rashmi Gupta](https://www.linkedin.com/in/guptar3)
-** Gruppemedlemmer:**
+
+### Benchmarking and Complexity Analysis of Fundamental Sorting Algorithms | Kristiania
+
+**Emne:** PG4200-H Algorithms and Data Structures  
+**Semester:** H-2025  
+**Foreleser:** [Prof. Dr. Rashmi Gupta](https://www.linkedin.com/in/guptar3)
+
+**Gruppemedlemmer:**
 
 | Navn | GitHub |
 |------|--------|
@@ -15,8 +21,6 @@
 ## Karakter
 
 Ingen karakter mottatt enda.
-
----
 
 ## Oversikt
 
