@@ -1,6 +1,9 @@
 # Eksamen Algorithms and Data Structures
-### Benchmarking and Complexity Analysis of Fundamental Sorting Algorithms | Kristiania University College, Oslo, Norge
+![Java](https://img.shields.io/badge/Java-orange)
+![Java](https://img.shields.io/badge/Java-orange?logo=java)
+### Benchmarking and Complexity Analysis of Fundamental Sorting Algorithms | Kristiania 
 **Emne:** PG4200-H Algorithms and Data Structures  | **Semester:** H-2025 | **Foreleser:** [Prof. Dr. Rashmi Gupta](https://www.linkedin.com/in/guptar3)
+---
 
 ## Gruppemedlemmer
 
@@ -8,9 +11,6 @@
 |------|--------|
 | Marius Kristensen | [@kremflote](https://github.com/kremflote) |
 | Marius André Ellingsen | [@mariusaellingsen](https://github.com/mariusaellingsen) |
-
-
-
 
 ---
 
@@ -53,4 +53,4 @@ Implementerer **Quick Sort** med fire pivot-strategier: første element, siste e
 ---
 
 
-*PG4200-H Avsluttende eksamen — Kristiania University College, 2025*
+*PG4200-H Avsluttende eksamen — Kristiania University College, 2026*
