@@ -20,11 +20,20 @@
 
 ## Karakter
 
-Ingen karakter mottatt enda.
+<p align="left">
+  <img src="https://img.shields.io/badge/Karakter-A-green?style=for-the-badge" />
+</p>
+
+Sensor begrunnelse:
+All four required algorithms are correctly implemented in Java. Time‑complexity reasoning is accurate and clearly explained. The candidates go beyond minimum requirements with a well‑designed benchmarking framework.
+Explanations of how each algorithm works are clear, correct, and phrased in an algorithmic way.
+This is an outstanding performance: The candidates not only satisfy the tasks but extend them (space complexity, architecture, JIT warm‑up, large‑n benchmarking) and argue from both theory and experiment. The usage of different algorithms and data structures is appropriate and well reasoned for the given problem.
+In the video, the candidates clearly demonstrate their knowledge. 
+Overall, the submission clearly fits the A / Outstanding descriptor .
 
 ## Oversikt
 
-Dette repositoriet inneholder gruppeeksamen for PG4200-H: Algorithms and Data Structures. Eksamen implementerer og analyserer fire klassiske sorteringsalgoritmer anvendt på **main.java.Wine Quality Dataset** fra [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/wine+quality).
+Gruppeeksamen for PG4200-H: Algorithms and Data Structures. Eksamen implementerer og analyserer fire klassiske sorteringsalgoritmer anvendt på **main.java.Wine Quality Dataset** fra [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/wine+quality).
 
 Alle algoritmer opererer på de **unike alkoholverdiene** hentet fra de kombinerte rød- og hvitvin `.csv`-filene.
 
