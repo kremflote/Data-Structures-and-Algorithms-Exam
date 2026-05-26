@@ -1,7 +1,7 @@
-# Eksamen Algorithms and Data Structures
-
 ![Java](https://img.shields.io/badge/Java-orange?logo=java)
 ![Sorting Algorithms](https://img.shields.io/badge/Sorting%20Algorithms-blue)
+
+# Eksamen Algorithms and Data Structures
 
 ### Benchmarking and Complexity Analysis of Fundamental Sorting Algorithms | Kristiania
 
