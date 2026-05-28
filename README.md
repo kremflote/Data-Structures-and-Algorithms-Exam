@@ -6,7 +6,7 @@
 ### Benchmarking and Complexity Analysis of Fundamental Sorting Algorithms | Kristiania
 
 **Emne:** PG4200-H Algorithms and Data Structures  
-**Semester:** H-2025  
+**Semester:** Vår-2026  
 **Foreleser:** [Prof. Dr. Rashmi Gupta](https://www.linkedin.com/in/guptar3)
 
 **Gruppemedlemmer:**
